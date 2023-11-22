@@ -107,11 +107,11 @@ const Trees = ({ boundaries, count }) => {
     <group>
       {trees.map((tree, index) => (
         <object3D key={index} position={[tree.position.x, 0, tree.position.z]}>
-          <mesh scale={[1, 1, 1]} position={[0, -1, 0]}>
-            <boxGeometry />
-            <meshBasicMaterial wireframe />
+          <mesh scale={[1, 1, 1]} position={[0, -1, 0]} castShadow>
+            {/* <boxGeometry /> */}
+            {/* <meshBasicMate÷rial wireframe /> */}
           </mesh>
-          <primitive object={model.scene.clone()} />
+          <primitive object={model.scene.clone()} castShadow/>
         </object3D>
       ))}
       {trees.map((tree, index) => (
@@ -119,11 +119,11 @@ const Trees = ({ boundaries, count }) => {
           key={index + 20}
           position={[tree.position.x-16, -0.9, tree.position.z+10]}
         >
-          <mesh scale={[1, 1, 1]} position={[0, 0, 0]}>
-            <boxGeometry />
-            <meshBasicMaterial wireframe />
+          <mesh scale={[1, 1, 1]} position={[0, 0, 0]} castShadow>
+            {/* <boxGeometry /> */}
+            {/* <meshBasic÷Material wireframe /> */}
           </mesh>
-          <primitive object={model3.scene.clone()} />
+          <primitive object={model3.scene.clone()} castShadow/>
         </object3D>
       ))}
     </group>

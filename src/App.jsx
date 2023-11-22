@@ -5,9 +5,10 @@ import {Canvas} from '@react-three/fiber'
 import Home from "./components/Home";
 
 function App() {
+  console.log("I AM APP");
   return (
     <>
-      <Canvas shadows>
+      <Canvas shadows shadowMap>
         <Home/>
       </Canvas>
     </>
