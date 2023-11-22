@@ -63,6 +63,7 @@ const Trees = ({ boundaries, count }) => {
     GLTFLoader,
     "../../public/models/style_tree/scene.gltf"
   );
+
   model3.scene.scale.set(16, 9, 18);
 
   model.scene.traverse((object) => {

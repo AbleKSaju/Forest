@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { OrbitControls, Preload, useGLTF, useTexture } from "@react-three/drei";
+import { OrbitControls, Preload, useAnimations, useGLTF, useTexture } from "@react-three/drei";
 import { useHelper } from "@react-three/drei";
 import { BoxHelper, DirectionalLightHelper, PointLightHelper } from "three";
 import { useLoader } from '@react-three/fiber'
@@ -8,6 +8,15 @@ import { useFrame } from "@react-three/fiber";
 import Trees from "./Trees";
 import Lights from "./Lights";
 import Ground from "./Ground";
+import { Model } from "./Untitled";
+
+const Character=()=>{
+  const model=useGLTF("../../public/models/character/player.glb")
+  const {actions,names} = useAnimations(model.animations,model.scene)
+  // console.log(names);
+  console.log(model);
+  return <primitive object={model.scene}/>
+}
 
 const Home = () => {
   const meshRef = useRef();
@@ -21,8 +30,10 @@ const Home = () => {
   return (
     <>
       <OrbitControls />
-      <Trees boundaries={50} count={10} castShadow />
+      <Trees boundaries={40} count={10} castShadow />
       <Lights/>
+      <Model/>
+      {/* <Character/> */}
       <Ground/>
   
       <Preload all />
