@@ -7,7 +7,7 @@ const Ground = () => {
   return (
     <>
     <mesh rotation-x={Math.PI * -0.5} position={[0, -0.8, 0]} receiveShadow>
-        <planeGeometry args={[200, 200]} receiveShadow />
+        <planeGeometry args={[220, 220]} receiveShadow />
         <meshStandardMaterial map={ground4} />
       </mesh>
     </>
